@@ -8,6 +8,9 @@ RUN npm install
 
 COPY . .
 
+ARG VITE_URL_BACKEND
+ENV VITE_URL_BACKEND=$VITE_URL_BACKEND
+
 RUN npm run build
 
 FROM nginx:alpine
