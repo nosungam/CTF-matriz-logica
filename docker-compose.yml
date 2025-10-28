@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./matriz back
+    container_name: matriz-backend
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+    networks:
+      - matriz-network
+    restart: unless-stopped
+
+  frontend:
+    build: ./matriz front
+    container_name: matriz-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - matriz-network
+    restart: unless-stopped
+
+networks:
+  matriz-network:
+    driver: bridge
