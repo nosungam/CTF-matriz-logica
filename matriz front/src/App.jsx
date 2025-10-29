@@ -20,7 +20,7 @@ function App() {
   ]);
 
   useEffect(() => {
-    const urlBackend = "/matriz/api"; // Usar proxy de nginx
+    const urlBackend = "https://ctf.frvm.utn.edu.ar/matriz-logica"; // Usar proxy de nginx
     const combinaciones = {
       p: "¬I ∧ ( B ∧ (¬J ∨ (D ↔ H)) ) ∧ ( (G ∧ ¬F) ∨ (E ∧ C) )",
       a: "( A ∨ D ) ∧ ( ¬C ∨ ( E ∧ ( F ∨ ¬G ) ) ) ∧ ( H ↔ ¬J )",
