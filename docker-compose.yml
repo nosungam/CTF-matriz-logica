@@ -16,7 +16,7 @@ services:
     build:
       context: ./matriz front
       args:
-        VITE_URL_BACKEND: https://ctf.frvm.utn.edu.ar/matriz-logica
+        VITE_URL_BACKEND: https://ctf.frvm.utn.edu.ar
     container_name: matriz-frontend
     ports:
       - "80:80"

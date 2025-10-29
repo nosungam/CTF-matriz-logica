@@ -42,7 +42,7 @@ function App() {
       J: "((¬110 ∧ (210 ∨ (12 ∧ ¬410))) ∨ ((510 ⊕ 610) ∧ (710 ∨ 810))) ∧ (110 ∨ ¬810)",
     };
     for (const [key, value] of Object.entries(combinaciones)) {
-      fetch(`${urlBackend}/matriz/combinacion/${value}`, {
+      fetch(`${urlBackend}/matriz-logica/combinacion/${value}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

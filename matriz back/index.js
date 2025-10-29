@@ -10,14 +10,14 @@ app.use(express.json());
 app.use(cors());
 
 // Ruta de prueba
-app.get("/matriz", (req, res) => {
-  const routes = ["/matriz", "/matriz/resultado/:password"];
+app.get("/matriz-logica", (req, res) => {
+  const routes = ["/matriz-logica", "/matriz-logica/resultado/:password"];
 
-  res.json({ GET: routes, POST: ["/matriz/combinacion/:expresion"] });
+  res.json({ GET: routes, POST: ["/matriz-logica/combinacion/:expresion"] });
 });
 
 // Endpoint de combinación
-app.post("/matriz/combinacion/:combinacion", (req, res) => {
+app.post("/matriz-logica/combinacion/:combinacion", (req, res) => {
   const caracteres =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?";
   let resultado = "";
@@ -34,7 +34,7 @@ app.post("/matriz/combinacion/:combinacion", (req, res) => {
 });
 
 // Endpoint de resultado
-app.get("/matriz/resultado/:string", (req, res) => {
+app.get("/matriz-logica/resultado/:string", (req, res) => {
   const passwordCorrecta = "00000100";
   const stringRecibido = req.params.string;
 
