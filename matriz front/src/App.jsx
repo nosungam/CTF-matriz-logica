@@ -20,8 +20,7 @@ function App() {
   ]);
 
   useEffect(() => {
-    const urlBackend =
-      import.meta.env.VITE_URL_BACKEND || "http://localhost:3000";
+    const urlBackend = "/matriz/api"; // Usar proxy de nginx
     const combinaciones = {
       p: "¬I ∧ ( B ∧ (¬J ∨ (D ↔ H)) ) ∧ ( (G ∧ ¬F) ∨ (E ∧ C) )",
       a: "( A ∨ D ) ∧ ( ¬C ∨ ( E ∧ ( F ∨ ¬G ) ) ) ∧ ( H ↔ ¬J )",
@@ -42,7 +41,7 @@ function App() {
       J: "((¬110 ∧ (210 ∨ (12 ∧ ¬410))) ∨ ((510 ⊕ 610) ∧ (710 ∨ 810))) ∧ (110 ∨ ¬810)",
     };
     for (const [key, value] of Object.entries(combinaciones)) {
-      fetch(`${urlBackend}/matriz-logica/combinacion/${value}`, {
+      fetch(`${urlBackend}/combinacion/${value}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
